@@ -1,8 +1,11 @@
 {
   "name": "diacriticize",
-  "description": "Put A Description Here!",
+  "description": "randomly add diacritic unicode to a string",
   "version": "1.0.0",
   "main": "index.js",
+  "bin": {
+      "diacriticize": "cmd.js"
+    },
   "scripts": {
     "build": "browserify index.js -o bundle.js",
     "watch": "watchify index.js -o bundle.js --debug --verbose",
@@ -14,5 +17,8 @@
     "watchify": "*"
   },
   "author": "Cole Willsea <coleww@gmail.com> (http://colewillsea.com/)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "yargs": "^3.14.0"
+  }
 }

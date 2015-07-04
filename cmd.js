@@ -1,29 +1,26 @@
 #!/usr/bin/env node
 
-var nPlus7 = require('./')
+var diacriticize = require('./')
 var fs = require('fs')
 
 if(process.stdin.isTTY) {
   var argv = require('yargs')
     .alias('h', 'help')
     .help('help')
-    .usage('an oulipian text transformer')
-    .example('nPlus7 -d nouns.txt -f kanye_lyrics.txt')
-    .example('nPlus7 -f jokes.txt -n 5')
-    .example('nPlus7 water fowl are my favorite treat')
-    .example('echo demonstration | nPlus7')
-    .alias('d', 'dict')
-    .alias('n', 'enn')
+    .usage('randomly add diacritic unicode to a string')
+    .example('diacriticize lol cool whatever')
+    .example('diacriticize -l 0.1 oh yeah, wow so subtle')
+    .example('diacriticize -l 1 -f resume.txt')
+    .example('echo "WOW SO PRETTY" | diacriticize')
+    .alias('l', 'level')
     .alias('f', 'file')
-    .describe('d', 'path to a txt file containing a newline separated dictionary')
-    .describe('n', 'offset with which to perform the n-plus maneuver')
-    .describe('f', 'path to file containing text to transform')
+    .describe('l', 'floating point frequency at which to add marks. higher => more marks')
+    .describe('f', 'path to file containing text to diacriticize')
     .argv
   var dict
-  if(argv.d) dict = fs.readFileSync(argv.d).toString().split("\n")
   var text = argv.f ? fs.readFileSync(argv.f).toString() : argv._.join(" ")
 
-  process.stdout.write(nPlus7(text, dict, +argv.n))
+  process.stdout.write(diacriticize(text, argv.l))
   process.stdout.write("\n")
 } else {
 
@@ -35,7 +32,7 @@ if(process.stdin.isTTY) {
   })
 
   process.stdin.on('end', function() {
-    process.stdout.write(nPlus7(data))
+    process.stdout.write(diacriticize(data))
     process.stdout.write("\n")
   })
 }
