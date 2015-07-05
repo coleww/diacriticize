@@ -1,6 +1,8 @@
 diacriticize
 ----------------
 
+[![NPM](https://nodei.co/npm/diacriticize.png)](https://nodei.co/npm/diacriticize/)
+
 randomly add some stackable unicode to a string
 
 `npm install diacriticize`
