@@ -9,6 +9,8 @@ randomly add some stackable unicode to a string
 
 ![example](example.png)
 
+Or Perhaps Try [A Very Broken Demo](http://coleww.github.io/diacriticize/) ? !
+
 ### api
 
 `diacriticize(text, level=0.5)`
