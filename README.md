@@ -7,17 +7,16 @@ randomly add some stackable unicode to a string
 
 ### example
 
-```
-var diacriticize = require('diacriticize')
-diacriticize('Puff Daddy')
-=>  ͉P̿̃u̖͐f̘̦f̤ͣ ̠̈́D̬̒a̋ͯd̽̒dͭ͜y͑
-```
+![example](example.png)
 
 ### api
 
 `diacriticize(text, level=0.5)`
 - text: string to transform
 - level: optional float between 0-1 to compare Math.random() to when deciding whether or not to add a mark. higher => more marks
+
+`diacriticize.marks`
+- returns array of diacritic marks
 
 ### cli
 
