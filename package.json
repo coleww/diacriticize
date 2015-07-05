@@ -7,8 +7,8 @@
       "diacriticize": "cmd.js"
     },
   "scripts": {
-    "build": "browserify index.js -o bundle.js",
-    "watch": "watchify index.js -o bundle.js --debug --verbose",
+    "build": "browserify www/demo.js -o www/bundle.js",
+    "watch": "watchify www/demo.js -o www/bundle.js --debug --verbose",
     "test": "node test.js"
   },
   "devDependencies": {
