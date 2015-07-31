@@ -1,7 +1,7 @@
 {
   "name": "diacriticize",
   "description": "randomly add diacritic unicode to a string",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "bin": {
     "diacriticize": "cmd.js"
@@ -9,10 +9,11 @@
   "scripts": {
     "build": "browserify www/demo.js -o www/bundle.js",
     "watch": "watchify www/demo.js -o www/bundle.js --debug --verbose",
-    "test": "node test.js"
+    "test": "standard && node test.js"
   },
   "devDependencies": {
     "browserify": "*",
+    "standard": "^4.5.4",
     "tape": "^4.0.0",
     "watchify": "*"
   },
